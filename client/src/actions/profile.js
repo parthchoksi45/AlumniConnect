@@ -11,7 +11,7 @@ import { setAlert } from "./alert";
 //get current profile
 export const getCurrentProfile=()=> async dispatch=>{
     try{
-          const res= await axios.get('/api/profile/me');
+          const res= await axios.get('https://mern-app-alumniconnect.onrender.com/api/profile/me');
           dispatch({
                 type:GET_PROFILE,
                 payload:res.data
@@ -27,7 +27,7 @@ export const getCurrentProfile=()=> async dispatch=>{
 //Get profile By Id
 export const getProfileById=(id)=> async dispatch=>{
     try{
-          const res= await axios.get(`/api/profile/user/${id}`);
+          const res= await axios.get(`https://mern-app-alumniconnect.onrender.com/api/profile/user/${id}`);
           dispatch({
                 type:GET_PROFILE,
                 payload:res.data
@@ -43,7 +43,7 @@ export const getProfileById=(id)=> async dispatch=>{
 //Get all profiles
 export const getProfiles=()=> async dispatch=>{
     try{
-          const res= await axios.get('/api/profile');
+          const res= await axios.get('https://mern-app-alumniconnect.onrender.com/api/profile');
           dispatch({
                 type:GET_PROFILES,
                 payload:res.data
@@ -65,7 +65,7 @@ export const createProfile=(formData,history)=>async dispatch =>{
                 'Content-Type':'application/json'
             }
         }
-        const res =await axios.post('/api/profile', formData,config);
+        const res =await axios.post('https://mern-app-alumniconnect.onrender.com/api/profile', formData,config);
         dispatch({
             type:GET_PROFILE,
             payload: res.data
